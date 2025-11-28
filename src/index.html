@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eModulo - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row p-0 m-0">
+            <div class="col-8 p-0 m-0">
+                <div class="container-fluid overflow-hidden" style="background-image: url(background\ login.svg); background-size: cover; height: 100vh; background-position: center;">
+
+                </div>
+            </div>
+            <div class="col ps-4 pe-4">
+                <div class="container" style="height: 100vh;">
+                    <form action="/login" method="post" class="vstack gap-2 justify-content-center" style="height: 100vh;" novalidate>
+                        <img src="eModulo - THESIS (2).svg" alt="" style="height: 120px;">
+                        <label for="email">Email:</label>
+                        <input type="email" required name="email" pattern="^[^@\s]+@tup\.edu\.ph$" id="email" placeholder="Enter Email:" class="border rounded-pill border-2 border-dark form-control">
+                        <label for="email">Password:</label>
+                        <input type="password" required name="password" id="password" placeholder="Enter Password:" class="border rounded-pill border-2 border-dark form-control">
+                        <button class="btn rounded-pill btn-primary mt-2" type="submit">Login</button>
+                        <a href="signup.html" class="align-self-center mt-2">Sign up</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const form = document.querySelector('form')
+
+    form.addEventListener('submit', (e)=>{
+        if(!form.checkValidity()){
+            e.preventDefault()
+        }
+
+        form.classList.add('was-validated')
+    })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
