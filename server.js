@@ -52,6 +52,21 @@ app.post('/login', async(req, res) => {
 
 })
 
+const schema2 = new mongoose.Schema({
+    Progress: Number
+})
+
+const DashboardProgress = mongoose.model('dashboard_progress', schema2)
+
+//DASHBOARD PROGRESS
+app.get('/dashboard-progress', async(req, res) =>{
+    const data = await DashboardProgress.find()
+
+    console.log('Progress: ' + data)
+
+    res.json(data)
+})
+
 app.listen(5000, () => {
     console.log('Server Ready! port:5000')
 })
