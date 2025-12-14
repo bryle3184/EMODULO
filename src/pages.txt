@@ -120,6 +120,198 @@ moduleCourse26()
 moduleCourse27()
 
 
+btnModuleCourseInheritanceEasyActivity
+btnModuleCourseEncapsulationEasyActivity
+btnModuleCourseAbstractionEasyActivity
+btnModuleCoursePolymorphismEasyActivity
+
+
+{Difficulty: "Easy", Mode: "Pre-test", Score: 0, Items: 5},
+{Difficulty: "Easy", Mode: "Encapsulation", Score: 0, Items: 2},
+{Difficulty: "Easy", Mode: "Inheritance", Score: 0, Items: 2},
+{Difficulty: "Easy", Mode: "Abstraction", Score: 0, Items: 2},
+{Difficulty: "Easy", Mode: "Polymorphism", Score: 0, Items: 2},
+{Difficulty: "Easy", Mode: "Post-test", Score: 0, Items: 8},
+
+{Difficulty: "Moderate", Mode: "Pre-test", Score: 0, Items: 5},
+{Difficulty: "Moderate", Mode: "Encapsulation", Score: 0, Items: 2},
+{Difficulty: "Moderate", Mode: "Inheritance", Score: 0, Items: 2},
+{Difficulty: "Moderate", Mode: "Abstraction", Score: 0, Items: 2},
+{Difficulty: "Moderate", Mode: "Polymorphism", Score: 0, Items: 2},
+{Difficulty: "Moderate", Mode: "Post-test", Score: 0, Items: 8},
+
+{Difficulty: "Challenging", Mode: "Pre-test", Score: 0, Items: 5},
+{Difficulty: "Challenging", Mode: "Encapsulation", Score: 0, Items: 2},
+{Difficulty: "Challenging", Mode: "Inheritance", Score: 0, Items: 2},
+{Difficulty: "Challenging", Mode: "Abstraction", Score: 0, Items: 2},
+{Difficulty: "Challenging", Mode: "Polymorphism", Score: 0, Items: 2},
+{Difficulty: "Challenging", Mode: "Post-test", Score: 0, Items: 8},
+
+{Difficulty: "Tough", Mode: "Pre-test", Score: 0, Items: 5},
+{Difficulty: "Tough", Mode: "Encapsulation", Score: 0, Items: 2},
+{Difficulty: "Tough", Mode: "Inheritance", Score: 0, Items: 2},
+{Difficulty: "Tough", Mode: "Abstraction", Score: 0, Items: 2},
+{Difficulty: "Tough", Mode: "Polymorphism", Score: 0, Items: 2},
+{Difficulty: "Tough", Mode: "Post-test", Score: 0, Items: 8},
+
+
+
+const moderatePreTest = document.getElementById('moderatePreTest')
+const moderateInheritance = document.getElementById('moderateInheritance')
+const moderateEncapsulation = document.getElementById('moderateEncapsulation')
+const moderateAbstraction = document.getElementById('moderateAbstraction')
+const moderatePolymorphism = document.getElementById('moderatePolymorphism')
+const moderatePostTest = document.getElementById('moderatePostTest')
+
+const moderateScore = fetch('/AllScores')
+
+async function getModerateScore(){
+    const moderateScores = await ModerateScore
+    const getModerateScores = await moderateScores.json()
+
+    moderatePreTest.textContent = `${getModeratePreTest[6].Score}/5`
+    moderateInheritance.textContent = `${getModeratePreTest[7].Score}/2`
+    moderateEncapsulation.textContent = `${getModeratePreTest[8].Score}/2`
+    moderateAbstraction.textContent = `${getModeratePreTest[9].Score}/2`
+    moderatePolymorphism.textContent = `${getModeratePreTest[10].Score}/2`
+    moderatePostTest.textContent = `${getModeratePreTest[11].Score}/8`
+}
+
+getModerateScore()
+
+
+total scores: 84
+
+8 = 9.52380952381
+7 = 8.33333333333
+6 = 7.14285714286
+5 = 5.95238095238
+4 = 4.7619047619
+3 = 3.57142857143
+2 = 2.38095238095
+1 = 1.19047619048
+
+
+7.14285714286
+8.33333333333
+9.52380952381
+
+4.7619047619
+3.57142857143
+2.38095238095
+1.19047619048
+
+
+
+4
+3
+2
+1
+
+6
+7
+8
+
+{inheritanceProgress: 0},
+{encapsulationProgress: 0},
+{abstractionProgress: 0},
+{polymorphismProgress: 0}
+
+
+async function getData(){
+                            const fetchedData = await datas
+                            const getData = await fetchedData.json()
+
+                            let result = getData[0].Progress + 7.14285714286
+                            let result1 = getData[0].inheritanceProgress + 7.14285714286
+                            let result2 = getData[1].encapsulationProgress + 7.14285714286
+                            let result3 = getData[2].abstractionProgress + 7.14285714286
+                            let result4 = getData[3].polymorphismProgress + 7.14285714286
+
+                            const data = {
+                                Progress: result
+                            }
+
+                            const datass1 = {
+                                Progress: result1
+                            }
+
+                            const datas2 = {
+                                Progress: result2
+                            }
+
+                            const datas3 = {
+                                Progress: result3
+                            }
+
+                            const datas4 = {
+                                Progress: result4
+                            }
+
+                            jsonData = JSON.stringify(data)
+                                xhr = new XMLHttpRequest()
+                                xhr.open("POST", "/dashboard-progress/update", true)
+                                xhr.setRequestHeader("Content-type", "application/json")
+                                xhr.onreadystatechange = function () {
+                                if (xhr.readyState === 4 && xhr.status === 200){
+                                console.log('Data Sent Successfully')
+                                }
+                            }
+
+                            jsonData2 = JSON.stringify(datass1)
+                                xhr2 = new XMLHttpRequest()
+                                xhr2.open("POST", "/moduleProgress/update/inheritance", true)
+                                xhr2.setRequestHeader("Content-type", "application/json")
+                                xhr2.onreadystatechange = function () {
+                                if (xhr2.readyState === 4 && xhr2.status === 200){
+                                console.log('Data Sent Successfully')
+                                }
+                            }
+
+                            jsonData3 = JSON.stringify(datas2)
+                                xhr3 = new XMLHttpRequest()
+                                xhr3.open("POST", "/moduleProgress/update/encapsulation", true)
+                                xhr3.setRequestHeader("Content-type", "application/json")
+                                xhr3.onreadystatechange = function () {
+                                if (xhr3.readyState === 4 && xhr3.status === 200){
+                                console.log('Data Sent Successfully')
+                                }
+                            }
+
+                            jsonData4 = JSON.stringify(datas3)
+                                xhr4 = new XMLHttpRequest()
+                                xhr4.open("POST", "/moduleProgress/update/abstraction", true)
+                                xhr4.setRequestHeader("Content-type", "application/json")
+                                xhr4.onreadystatechange = function () {
+                                if (xhr4.readyState === 4 && xhr4.status === 200){
+                                console.log('Data Sent Successfully')
+                                }
+                            }
+
+                            jsonData5 = JSON.stringify(datas4)
+                                xhr5 = new XMLHttpRequest()
+                                xhr5.open("POST", "/moduleProgress/update/polymorphism", true)
+                                xhr5.setRequestHeader("Content-type", "application/json")
+                                xhr5.onreadystatechange = function () {
+                                if (xhr5.readyState === 4 && xhr5.status === 200){
+                                console.log('Data Sent Successfully')
+                                }
+                            }
+
+                        xhr.send(jsonData)
+                        xhr2.send(jsonData2)
+                        xhr3.send(jsonData3)
+                        xhr4.send(jsonData4)
+                        xhr5.send(jsonData5)
+
+                        }
+
+                            
+
+
+
+
+
 
 
 

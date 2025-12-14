@@ -9,141 +9,263 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body id="App">
 
-<div class="container" v-if="btnExercises">
-    <div class="row vstack">
-        <div class="col">
-            <div class="container hstack gap-3 align-items-center m-4">
-                <h4 class="ms-4 fw-normal">Easy Mode</h4>
-                <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
+    <div class="container" v-if="Exercises">
+        <div class="row hstack justify-content-center">
+            <div class="col-10">
+                <div class="container hstack gap-3 align-items-center m-4">
+                    <h4 class="ms-4 fw-normal">Easy Mode</h4>
+                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
+                </div>
+            </div>
+            <div class="col">
+                <h5>SCORES:</h5>
+            </div>
+            <div class="row" @click="showEasyPreTestStart">
+                <div class="col-10">
+                    <p>1. Pre-Test</p>
+                </div>
+                <div class="col">
+                    <p>5/5</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseInheritanceEasyActivity">
+                <div class="col-10">
+                    <p>2. Inheritance Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseEncapsulationEasyActivity">
+                <div class="col-10">
+                    <p>3. Encapsulation Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseAbstractionEasyActivity">
+                <div class="col-10">
+                    <p>4. Abstraction Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCoursePolymorphismEasyActivity">
+                <div class="col-10">
+                    <p>5. Polymorphism Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="showEasyPostTestStart">
+                <div class="col-10">
+                    <p>6. Post-Test</p>
+                </div>
+                <div class="col">
+                    <p>8/8</p>
+                </div>
             </div>
         </div>
-        <div class="col">
-            <p>1. Pre-Test</p>
+
+        <div class="row hstack justify-content-center">
+            <div class="col-10">
+                <div class="container hstack gap-3 align-items-center m-4">
+                    <h4 class="ms-4 fw-normal">Moderate Mode</h4>
+                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
+                </div>
+            </div>
+            <div class="col">
+                <h5>SCORES:</h5>
+            </div>
+            <div class="row" @click="showmoderatePreTestStart">
+                <div class="col-10">
+                    <p>1. Pre-Test</p>
+                </div>
+                <div class="col">
+                    <p>5/5</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseInheritancemoderateActivity">
+                <div class="col-10">
+                    <p>2. Inheritance Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseEncapsulationmoderateActivity">
+                <div class="col-10">
+                    <p>3. Encapsulation Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseAbstractionmoderateActivity">
+                <div class="col-10">
+                    <p>4. Abstraction Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCoursePolymorphismmoderateActivity">
+                <div class="col-10">
+                    <p>5. Polymorphism Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="showmoderatePostTestStart">
+                <div class="col-10">
+                    <p>6. Post-Test</p>
+                </div>
+                <div class="col">
+                    <p>8/8</p>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            <p>2. Inheritance Activity</p>
+
+        <div class="row hstack justify-content-center">
+            <div class="col-10">
+                <div class="container hstack gap-3 align-items-center m-4">
+                    <h4 class="ms-4 fw-normal">Challenging Mode</h4>
+                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-warning rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
+                </div>
+            </div>
+            <div class="col">
+                <h5>SCORES:</h5>
+            </div>
+            <div class="row" @click="showchallengingPreTestStart">
+                <div class="col-10">
+                    <p>1. Pre-Test</p>
+                </div>
+                <div class="col">
+                    <p>5/5</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseInheritancechallengingActivity">
+                <div class="col-10">
+                    <p>2. Inheritance Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseEncapsulationchallengingActivity">
+                <div class="col-10">
+                    <p>3. Encapsulation Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseAbstractionchallengingActivity">
+                <div class="col-10">
+                    <p>4. Abstraction Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCoursePolymorphismchallengingActivity">
+                <div class="col-10">
+                    <p>5. Polymorphism Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="showchallengingPostTestStart">
+                <div class="col-10">
+                    <p>6. Post-Test</p>
+                </div>
+                <div class="col">
+                    <p>8/8</p>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            <p>3. Encapsulation Activity</p>
-        </div>
-        <div class="col">
-            <p>4. Abstraction Activity</p>
-        </div>
-        <div class="col">
-            <p>5. Polymorphism Activity</p>
-        </div>
-        <div class="col">
-            <p>6. Post-Test</p>
+
+        <div class="row hstack justify-content-center">
+            <div class="col-10">
+                <div class="container hstack gap-3 align-items-center m-4">
+                    <h4 class="ms-4 fw-normal">Tough Mode</h4>
+                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-warning rounded-circle" style="height: 20px; width: 20px;"></div>
+                    <div class="box bg-danger rounded-circle" style="height: 20px; width: 20px;"></div>
+                </div>
+            </div>
+            <div class="col">
+                <h5>SCORES:</h5>
+            </div>
+            <div class="row" @click="showtoughPreTestStart">
+                <div class="col-10">
+                    <p>1. Pre-Test</p>
+                </div>
+                <div class="col">
+                    <p>5/5</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseInheritancetoughActivity">
+                <div class="col-10">
+                    <p>2. Inheritance Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseEncapsulationtoughActivity">
+                <div class="col-10">
+                    <p>3. Encapsulation Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCourseAbstractiontoughActivity">
+                <div class="col-10">
+                    <p>4. Abstraction Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="btnModuleCoursePolymorphismtoughActivity">
+                <div class="col-10">
+                    <p>5. Polymorphism Activity</p>
+                </div>
+                <div class="col">
+                    <p>2/2</p>
+                </div>
+            </div>
+            <div class="row" @click="showtoughPostTestStart">
+                <div class="col-10">
+                    <p>6. Post-Test</p>
+                </div>
+                <div class="col">
+                    <p>8/8</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row vstack">
-        <div class="col">
-            <div class="container hstack gap-3 align-items-center m-4">
-                <h4 class="ms-4 fw-normal">Moderate Mode</h4>
-                <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>1. Pre-Test</p>
-        </div>
-        <div class="col">
-            <p>2. Inheritance Activity</p>
-        </div>
-        <div class="col">
-            <p>3. Encapsulation Activity</p>
-        </div>
-        <div class="col">
-            <p>4. Abstraction Activity</p>
-        </div>
-        <div class="col">
-            <p>5. Polymorphism Activity</p>
-        </div>
-        <div class="col">
-            <p>6. Post-Test</p>
-        </div>
-    </div>
-
-    <div class="row vstack">
-        <div class="col">
-            <div class="container hstack gap-3 align-items-center m-4">
-                <h4 class="ms-4 fw-normal">Challenging Mode</h4>
-                <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-warning rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>1. Pre-Test</p>
-        </div>
-        <div class="col">
-            <p>2. Inheritance Activity</p>
-        </div>
-        <div class="col">
-            <p>3. Encapsulation Activity</p>
-        </div>
-        <div class="col">
-            <p>4. Abstraction Activity</p>
-        </div>
-        <div class="col">
-            <p>5. Polymorphism Activity</p>
-        </div>
-        <div class="col">
-            <p>6. Post-Test</p>
-        </div>
-    </div>
-
-    <div class="row vstack">
-        <div class="col">
-            <div class="container hstack gap-3 align-items-center m-4">
-                <h4 class="ms-4 fw-normal">Tough Mode</h4>
-                <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-warning rounded-circle" style="height: 20px; width: 20px;"></div>
-                <div class="box bg-danger rounded-circle" style="height: 20px; width: 20px;"></div>
-            </div>
-        </div>
-        <div class="col">
-            <p>1. Pre-Test</p>
-        </div>
-        <div class="col">
-            <p>2. Inheritance Activity</p>
-        </div>
-        <div class="col">
-            <p>3. Encapsulation Activity</p>
-        </div>
-        <div class="col">
-            <p>4. Abstraction Activity</p>
-        </div>
-        <div class="col">
-            <p>5. Polymorphism Activity</p>
-        </div>
-        <div class="col">
-            <p>6. Post-Test</p>
-        </div>
-    </div>
-</div>
-
-</body>
-
-<script>
-app.mount('#App')
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
