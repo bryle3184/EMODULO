@@ -532,6 +532,27 @@
                     </div>
                 </div>
             </div>
+            <script>
+                async function getBadge(name){
+
+                    let data = {
+                        name: name
+                    }
+
+                    jsonData = JSON.stringify(data)
+                        xhr = new XMLHttpRequest()
+                        xhr.open("POST", "/badges/update", true)
+                        xhr.setRequestHeader("Content-type", "application/json")
+                        xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200){
+                        console.log('Data Sent Successfully')
+                        }
+                    }
+
+                xhr.send(jsonData)
+
+                }
+            </script>
             <div class="row">
                 <div class="col">
                     <div class="container d-flex align-items-center justify-content-center p-2">
@@ -960,7 +981,7 @@ class Program {
                             </div>
                             <div class="container vstack align-items-center justify-content-center">
                                 <img src="RESILIENT LEARNER.webp" alt="" style="height: 150px;">
-                                <h6>Concept Explorer</h6>
+                                <h6>Resilient Learner</h6>
                             </div>
                             <div class="container vstack align-items-center justify-content-center">
                                 <img src="STARTER CHALLENGER.webp" alt="" style="height: 150px;">
@@ -2571,6 +2592,7 @@ class Program {
         </div>
     </nav>
 
+    <!--EASY BADGES-->
     <div class="container-fluid" v-if="allBadges">
         <div class="container-fluid vstack align-items-center justify-content-center text-center p-2">
             <div class="container">
@@ -2578,8 +2600,8 @@ class Program {
                 <p>Complete all badges!</p>
             </div>
             <hr style="width: 100%;">
-            <div class="row hstack" style="max-width: 100%;">
-                <div class="col p-2">
+            <div class="row hstack" style="max-width: 100%;" id="easyBadges">
+                <!-- <div class="col p-2">
                     <img style="height: 150px; width: 150px;" src="CONCEPT EXPLORER BADGE.webp" alt="">
                     <p>Concept Explorer</p>
                 </div>
@@ -2634,9 +2656,42 @@ class Program {
                 <div class="col">
                     <img style="height: 150px; width: 150px;" src="BEGINNER EXPLORER.webp" alt="">
                     <p>Beginner Explorer</p>
-                </div>
+                </div> -->
             </div>
+            <hr style="width: 100%;">
         </div>
+        <script>
+            const easyBadges = document.getElementById('easyBadges')
+            let fetchEasyBadges = fetch('/badges/easy')
+
+            async function easyBadgesFunction(){
+                const rawData = await fetchEasyBadges
+                const data = await rawData.json()
+
+                if(data.length == 0){
+                    easyBadges.innerHTML = `
+                        <div class="container align-items-center justify-content-center text-center p-5">
+                            No Badges Obtained in Easy Level.
+                        </div>
+                    `
+                }
+
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i])
+
+                    const div = document.createElement('div')
+                    div.className = "col"
+
+                    div.innerHTML = `
+                        <img style="height: 150px; width: 150px;" src="${data[i].url}" alt="">
+                        <p>${data[i].name}</p>
+                    `
+                    easyBadges.append(div)
+                }
+            }
+
+            easyBadgesFunction()
+        </script>
 
         <!--MODERATE BADGES-->
         <div class="container-fluid vstack align-items-center justify-content-center text-center p-2">
@@ -2645,8 +2700,8 @@ class Program {
                 <p>Complete all badges!</p>
             </div>
             <hr style="width: 100%;">
-            <div class="row hstack" style="max-width: 100%;">
-                <div class="col p-2">
+            <div class="row hstack" style="max-width: 100%;" id="moderateBadges">
+                <!-- <div class="col p-2">
                     <img style="height: 150px; width: 150px;" src="CONCEPT CHALLENGER.webp" alt="">
                     <p>Concept Challenger</p>
                 </div>
@@ -2685,9 +2740,42 @@ class Program {
                 <div class="col p-2">
                     <img style="height: 150px; width: 150px;" src="PROBLEM SOLVER.webp" alt="">
                     <p>Problem Solver</p>
-                </div>
+                </div> -->
             </div>
+            <hr style="width: 100%;">
         </div>
+        <script>
+            const moderateBadges = document.getElementById('moderateBadges')
+            let fetchmoderateBadges = fetch('/badges/moderate')
+
+            async function moderateBadgesFunction(){
+                const rawData = await fetchmoderateBadges
+                const data = await rawData.json()
+
+                if(data.length == 0){
+                    moderateBadges.innerHTML = `
+                        <div class="container align-items-center justify-content-center text-center p-5">
+                            No Badges Obtained in Moderate Level.
+                        </div>
+                    `
+                }
+
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i])
+
+                    const div = document.createElement('div')
+                    div.className = "col"
+
+                    div.innerHTML = `
+                        <img style="height: 150px; width: 150px;" src="${data[i].url}" alt="">
+                        <p>${data[i].name}</p>
+                    `
+                    moderateBadges.append(div)
+                }
+            }
+
+            moderateBadgesFunction()
+        </script>
 
         <!--CHALLENGING BADGES-->
         <div class="container-fluid vstack align-items-center justify-content-center text-center p-2">
@@ -2696,8 +2784,8 @@ class Program {
                 <p>Complete all badges!</p>
             </div>
             <hr style="width: 100%;">
-            <div class="row hstack" style="max-width: 100%;">
-                <div class="col p-2">
+            <div class="row hstack" style="max-width: 100%;" id="challengingBadges">
+                <!-- <div class="col p-2">
                     <img style="height: 150px; width: 150px;" src="MASTER CHALLENGER.webp" alt="">
                     <p>Master Challenger</p>
                 </div>
@@ -2736,9 +2824,42 @@ class Program {
                 <div class="col p-2">
                     <img style="height: 150px; width: 150px;" src="IDEALIST.webp" alt="">
                     <p>Idealist Coder</p>
-                </div>
+                </div> -->
             </div>
+            <hr style="width: 100%;">
         </div>
+        <script>
+            const challengingBadges = document.getElementById('challengingBadges')
+            let fetchchallengingBadges = fetch('/badges/challenging')
+
+            async function challengingBadgesFunction(){
+                const rawData = await fetchchallengingBadges
+                const data = await rawData.json()
+
+                if(data.length == 0){
+                    challengingBadges.innerHTML = `
+                        <div class="container align-items-center justify-content-center text-center p-5">
+                            No Badges Obtained in Challenging Level.
+                        </div>
+                    `
+                }
+
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i])
+
+                    const div = document.createElement('div')
+                    div.className = "col"
+
+                    div.innerHTML = `
+                        <img style="height: 150px; width: 150px;" src="${data[i].url}" alt="">
+                        <p>${data[i].name}</p>
+                    `
+                    challengingBadges.append(div)
+                }
+            }
+
+            challengingBadgesFunction()
+        </script>
 
         <!--TOUGH BADGES-->
         <div class="container-fluid vstack align-items-center justify-content-center text-center p-2">
@@ -2747,8 +2868,8 @@ class Program {
                 <p>Complete all badges!</p>
             </div>
             <hr style="width: 100%;">
-            <div class="row hstack" style="max-width: 100%;">
-                <div class="col p-2">
+            <div class="row hstack" style="max-width: 100%;" id="toughBadges">
+                <!-- <div class="col p-2">
                     <img style="height: 150px; width: 150px;" src="OOP MASTER.webp" alt="">
                     <p>OOP Master</p>
                 </div>
@@ -2791,9 +2912,42 @@ class Program {
                 <div class="col p-2">
                     <img style="height: 150px; width: 150px;" src="UNBREAKABLE SPIRIT.webp" alt="">
                     <p>Unbreakable Spirit</p>
-                </div>
+                </div> -->
             </div>
+            <hr style="width: 100%;">
         </div>
+        <script>
+            const toughBadges = document.getElementById('toughBadges')
+            let fetchtoughBadges = fetch('/badges/tough')
+
+            async function toughBadgesFunction(){
+                const rawData = await fetchtoughBadges
+                const data = await rawData.json()
+
+                if(data.length == 0){
+                    toughBadges.innerHTML = `
+                        <div class="container align-items-center justify-content-center text-center p-5">
+                            No Badges Obtained in Tough Level.
+                        </div>
+                    `
+                }
+
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i])
+
+                    const div = document.createElement('div')
+                    div.className = "col"
+
+                    div.innerHTML = `
+                        <img style="height: 150px; width: 150px;" src="${data[i].url}" alt="">
+                        <p>${data[i].name}</p>
+                    `
+                    toughBadges.append(div)
+                }
+            }
+
+            toughBadgesFunction()
+        </script>
 
     </div>
 
@@ -8429,6 +8583,7 @@ public:
                         }
                         if (score == 1) {
                             this.easyModuleCourse9badge1 = true
+                            getBadge("Junior Inheritor")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -8508,6 +8663,8 @@ public:
                         }
                         else if (score == 2) {
                             this.easyModuleCourse9badge2 = true
+                            getBadge("Junior Inheritor")
+                            getBadge("Code Reuser")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -8603,6 +8760,8 @@ public:
                         if (score == 1) {
                             this.moderateModuleCourse9badge1 = true
 
+                            getBadge("Bridge Builder")
+
                             const datas = fetch('/dashboard-progress')
 
                             async function getData(){
@@ -8683,6 +8842,8 @@ public:
                         }
                         else if (score == 2) {
                             this.moderateModuleCourse9badge2 = true
+                            getBadge("Bridge Builder")
+                            getBadge("Code Reuser")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -8772,6 +8933,84 @@ public:
                         }
                         if (score == 1) {
                             this.challengingModuleCourse9badge2 = true
+                            getBadge("Syntax Slayer")
+                            getBadge("Code Reuser")
+
+                            const datas = fetch('/dashboard-progress')
+
+                            async function getData(){
+                            const fetchedData = await datas
+                            const getData = await fetchedData.json()
+
+                            let result = getData[0].Progress + 2.38095238095
+
+                            const data = {
+                                Progress: result
+                            }
+
+                            jsonData = JSON.stringify(data)
+                                xhr = new XMLHttpRequest()
+                                xhr.open("POST", "/dashboard-progress/update", true)
+                                xhr.setRequestHeader("Content-type", "application/json")
+                                xhr.onreadystatechange = function () {
+                                if (xhr.readyState === 4 && xhr.status === 200){
+                                console.log('Data Sent Successfully')
+                                }
+                            }
+
+                            xhr.send(jsonData)
+
+                            }
+
+                            getData()
+
+                            const datas1 = fetch('/moduleProgress')
+
+                            async function getData1(){
+                            const fetchedData = await datas1
+                            const getData = await fetchedData.json()
+
+                            let result = getData[0].inheritanceProgress + 2.38095238095
+
+                            const data = {
+                                Progress: result
+                            }
+
+                            jsonData2 = JSON.stringify(data)
+                                xhr2 = new XMLHttpRequest()
+                                xhr2.open("POST", "/moduleProgress/update/inheritance", true)
+                                xhr2.setRequestHeader("Content-type", "application/json")
+                                xhr2.onreadystatechange = function () {
+                                if (xhr2.readyState === 4 && xhr2.status === 200){
+                                console.log('Data Sent Successfully')
+                                }
+                            }
+
+                            xhr2.send(jsonData2)
+
+                            }
+
+                            getData1()
+
+                            async function updateScore(){
+                            const data1 = {
+                                Score: 2
+                            }
+
+                            jsonData1 = JSON.stringify(data1)
+                                xhr1 = new XMLHttpRequest()
+                                xhr1.open("POST", "/AllScores/update/challenging/inheritance", true)
+                                xhr1.setRequestHeader("Content-type", "application/json")
+                                xhr1.onreadystatechange = function () {
+                                if (xhr1.readyState === 4 && xhr1.status === 200){
+                                console.log('Data Sent Successfully')
+                                }
+                            }
+
+                            xhr1.send(jsonData1)
+                            }
+
+                            updateScore()
                         }
                         else {
                             this.errorModuleCourse9 = true
@@ -8789,6 +9028,8 @@ public:
                         }
                         if (score == 1) {
                             this.toughModuleCourse9badge1 = true
+
+                            getBadge("Code Conqueror")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -8868,6 +9109,8 @@ public:
                         }
                         else if (score == 2) {
                             this.toughModuleCourse9badge2 = true
+                            getBadge("Code Conqueror")
+                            getBadge("Code Reuser")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -9576,6 +9819,7 @@ public:
                         }
                         if (score == 1) {
                             this.easyModuleCourse15badge1 = true
+                            getBadge("Data Protector")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -9655,6 +9899,8 @@ public:
                         }
                         else if (score == 2) {
                             this.easyModuleCourse15badge2 = true
+                            getBadge("Data Protector")
+                            getBadge("Guardian of Code")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -9748,6 +9994,7 @@ public:
                         }
                         if (score == 1) {
                             this.moderateModuleCourse15badge1 = true
+                            getBadge("Data Guardian")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -9827,6 +10074,8 @@ public:
                         }
                         else if (score == 2) {
                             this.moderateModuleCourse15badge2 = true
+                            getBadge("Data Guardian")
+                            getBadge("Guardian of Code")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -9920,6 +10169,7 @@ public:
                         }
                         if (score == 1) {
                             this.challengingModuleCourse15badge1 = true
+                            getBadge("Logic Breaker")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -9999,6 +10249,8 @@ public:
                         }
                         else if (score == 2) {
                             this.challengingModuleCourse15badge2 = true
+                            getBadge("Logic Breaker")
+                            getBadge("Guardian of Code")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -10092,6 +10344,7 @@ public:
                         }
                         if (score == 1) {
                             this.toughModuleCourse15badge1 = true
+                            getBadge("Guardian of Syntax")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -10171,6 +10424,8 @@ public:
                         }
                         else if (score == 2) {
                             this.toughModuleCourse15badge2 = true
+                            getBadge("Guardian of Syntax")
+                            getBadge("Guardian of Code")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -10873,6 +11128,8 @@ public:
                         }
                         if (score == 1) {
                             this.easyModuleCourse21badge2 = true
+                            getBadge("Essential Thinker")
+                            getBadge("Abstract Thinker")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -10962,6 +11219,8 @@ public:
                         }
                         if (score == 1) {
                             this.moderateModuleCourse21badge2 = true
+                            getBadge("Visionary Designer")
+                            getBadge("Abstract Thinker")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -11051,6 +11310,8 @@ public:
                         }
                         if (score == 1) {
                             this.challengingModuleCourse21badge2 = true
+                            getBadge("Bug Hunter")
+                            getBadge("Abstract Thinker")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -11140,6 +11401,8 @@ public:
                         }
                         if (score == 1) {
                             this.toughModuleCourse21badge2 = true
+                            getBadge("Logic Seeker")
+                            getBadge("Abstract Thinker")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -11842,7 +12105,9 @@ public:
                             score++
                         }
                         if (score == 1) {
-                            this.easyModuleCourse15badge2 = true
+                            this.easyModuleCourse27badge2 = true
+                            getBadge("Rapid Coder")
+                            getBadge("Polymorph Pioneer")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -11935,7 +12200,8 @@ public:
                             score++
                         }
                         if (score == 1) {
-                            this.moderateModuleCourse15badge1 = true
+                            this.moderateModuleCourse27badge1 = true
+                            getBadge("Rapid Coder")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -12014,7 +12280,9 @@ public:
                             updateScore()
                         }
                         else if (score == 2) {
-                            this.moderateModuleCourse15badge2 = true
+                            this.moderateModuleCourse27badge2 = true
+                            getBadge("Shape Shifter")
+                            getBadge("Polymorph Pioneer")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -12107,7 +12375,8 @@ public:
                             score++
                         }
                         if (score == 1) {
-                            this.challengingModuleCourse15badge1 = true
+                            this.challengingModuleCourse27badge1 = true
+                            getBadge("Code Survivor")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -12186,7 +12455,9 @@ public:
                             updateScore()
                         }
                         else if (score == 2) {
-                            this.challengingModuleCourse15badge2 = true
+                            this.challengingModuleCourse27badge2 = true
+                            getBadge("Code Survivor")
+                            getBadge("Polymorph Pioneer")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -12279,7 +12550,8 @@ public:
                             score++
                         }
                         if (score == 1) {
-                            this.toughModuleCourse15badge1 = true
+                            this.toughModuleCourse27badge1 = true
+                            getBadge("Summit Climber")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -12358,7 +12630,9 @@ public:
                             updateScore()
                         }
                         else if (score == 2) {
-                            this.toughModuleCourse15badge2 = true
+                            this.toughModuleCourse27badge2 = true
+                            getBadge("Summit Climber")
+                            getBadge("Polymorph Pioneer")
 
                             const datas = fetch('/dashboard-progress')
 
@@ -13080,6 +13354,9 @@ public:
                         this.easyPreTest = false
                         this.easyPreTestFeedback5 = true
 
+                        getBadge("Concept Explorer")
+                        getBadge("Starter Challenger")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -13198,6 +13475,8 @@ public:
                     else if (score == 4) {
                         this.easyPreTest = false
                         this.easyPreTestFeedback4 = true
+
+                        getBadge("Starter Challenger")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -13681,6 +13960,8 @@ public:
                     if (score == 5) {
                         this.easyPostTest = false
                         this.easyPostTestFeedback5 = true
+
+                        getBadge("Beginner Explorer")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -14395,10 +14676,13 @@ public:
                         }
 
                         updateScore()
+                        getBadge("Foundation Builder")
                     }
                     else if (score == 7) {
                         this.easyPostTest = false
                         this.easyPostTestFeedback7 = true
+
+                        getBadge("OOP Explorer")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -14518,6 +14802,12 @@ public:
                     else if (score == 8) {
                         this.easyPostTest = false
                         this.easyPostTestFeedback8 = true
+
+                        getBadge("Code Apprentice")
+                        getBadge("OOP Explorer")
+                        getBadge("Foundation Builder")
+                        getBadge("Beginner Explorer")
+                        
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -14724,6 +15014,10 @@ public:
                         this.moderatePreTest = false
                         this.moderatePreTestFeedback5 = true
 
+                        getBadge("Concept Explorer")
+                        getBadge("Resilient Learner")
+                        getBadge("Starter Challenger")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -14843,6 +15137,8 @@ public:
                         this.moderatePreTest = false
                         this.moderatePreTestFeedback4 = true
 
+                        getBadge("Resilient Learner")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -14961,6 +15257,8 @@ public:
                     else if (score == 3) {
                         this.moderatePreTest = false
                         this.moderatePreTestFeedback3 = true
+
+                        getBadge("Level-up Learner")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -15926,6 +16224,8 @@ public:
                         this.moderatePostTest = false
                         this.moderatePostTestFeedback6 = true
 
+                        getBadge("Problem Solver")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -16045,6 +16345,9 @@ public:
                         this.moderatePostTest = false
                         this.moderatePostTestFeedback7 = true
 
+                        getBadge("OOP Challenger")
+                        getBadge("Problem Solver")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -16163,6 +16466,10 @@ public:
                     else if (score == 8) {
                         this.moderatePostTest = false
                         this.moderatePostTestFeedback8 = true
+
+                        getBadge("OOP Challenger")
+                        getBadge("Code Warrior")
+                        getBadge("Problem Solver")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -16365,6 +16672,10 @@ public:
                         this.challengingPreTest = false
                         this.challengingPreTestFeedback5 = true
 
+                        getBadge("Master Challenger")
+                        getBadge("Persistent Learner")
+                        getBadge("On the Climb")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -16484,6 +16795,8 @@ public:
                         this.challengingPreTest = false
                         this.challengingPreTestFeedback4 = true
 
+                        getBadge("Persistent Learner")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -16602,6 +16915,8 @@ public:
                     else if (score == 3) {
                         this.challengingPreTest = false
                         this.challengingPreTestFeedback3 = true
+
+                        getBadge("On the Climb")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -17567,6 +17882,8 @@ public:
                         this.challengingPostTest = false
                         this.challengingPostTestFeedback6 = true
 
+                        getBadge("Ideal Coder")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -17686,6 +18003,9 @@ public:
                         this.challengingPostTest = false
                         this.challengingPostTestFeedback7 = true
 
+                        getBadge("Code Gladiator")
+                        getBadge("Persistent Debugger")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -17804,6 +18124,10 @@ public:
                     else if (score == 8) {
                         this.challengingPostTest = false
                         this.challengingPostTestFeedback8 = true
+
+                        getBadge("Code Gladiator")
+                        getBadge("Persistent Debugger")
+                        getBadge("Ideal Coder")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -18003,6 +18327,11 @@ public:
                         this.toughPreTest = false
                         this.toughPreTestFeedback5 = true
 
+                        getBadge("OOP Master")
+                        getBadge("Persistent Challenger")
+                        getBadge("Code Fighter")
+                        getBadge("Advancing")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -18122,6 +18451,9 @@ public:
                         this.toughPreTest = false
                         this.toughPreTestFeedback4 = true
 
+                        getBadge("Code Fighter")
+                        getBadge("Persistent Challenger")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -18240,6 +18572,8 @@ public:
                     else if (score == 3) {
                         this.toughPreTest = false
                         this.toughPreTestFeedback3 = true
+
+                        getBadge("Advancing")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
@@ -19205,6 +19539,8 @@ public:
                         this.toughPostTest = false
                         this.toughPostTestFeedback6 = true
 
+                        getBadge("Unbreakable Spirit")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -19324,6 +19660,9 @@ public:
                         this.toughPostTest = false
                         this.toughPostTestFeedback7 = true
 
+                        getBadge("Iron Coder")
+                        getBadge("Unbreakable Spirit")
+
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')
 
@@ -19442,6 +19781,10 @@ public:
                     else if (score == 8) {
                         this.toughPostTest = false
                         this.toughPostTestFeedback8 = true
+
+                        getBadge("Grandmaster of Code")
+                        getBadge("Iron Coder")
+                        getBadge("Unbreakable Spirit")
 
                         const datas = fetch('/dashboard-progress')
                         const datas1 = fetch('/moduleProgress')

@@ -218,6 +218,211 @@ total scores: 84
 {polymorphismProgress: 0}
 
 
+{name: "Concept Explorer", difficulty: "easy", obtained: false, url: "CONCEPT EXPLORER BADGE.webp"},
+{name: "Junior Inheritor", difficulty: "easy", obtained: false, url: "JUNIOR INHERITOR.png"},
+{name: "Data Protector", difficulty: "easy", obtained: false, url: "DATA PROTECTOR.webp"},
+{name: "Essential Thinker", difficulty: "easy", obtained: false, url: "ESSENTIAL THINKER.png"},
+{name: "Starter Challenger", difficulty: "easy", obtained: false, url: "STARTER CHALLENGER.webp"},
+{name: "Code Reuser", difficulty: "easy", obtained: false, url: "CODE REUSER.webp"},
+{name: "Guardian of Code", difficulty: "easy", obtained: false, url: "GUARDIAN OF CODE.png"},
+{name: "Abstract Thinker", difficulty: "easy", obtained: false, url: "ABSTRACT THINKER.webp"},
+{name: "Polymorph Pinoeer", difficulty: "easy", obtained: false, url: "POLYMORPH PIONEER.webp"},
+{name: "Rapid Coder", difficulty: "easy", obtained: false, url: "RAPID CODER.webp"},
+{name: "Code Apprentice", difficulty: "easy", obtained: false, url: "CODE APPRENTICE.webp"},
+{name: "OOP Explorer", difficulty: "easy", obtained: false, url: "OOP EXPLORER.png"},
+{name: "Foundation Builder", difficulty: "easy", obtained: false, url: "FOUNDATION BUILDER.png"},
+{name: "Beginner Explorer", difficulty: "easy", obtained: false, url: "BEGINNER EXPLORER.webp"},
+
+Concept Explorer
+Junior Inheritor
+Data Protector
+Essential Thinker
+Starter Challenger
+Code Reuser
+Guardian of Code
+Abstract Thinker
+Polymorph Pinoeer
+Rapid Coder
+Code Apprentice
+OOP Explorer
+Foundation Builder
+Beginner Explorer
+
+CONCEPT EXPLORER BADGE.webp
+JUNIOR INHERITOR.png
+DATA PROTECTOR.webp
+ESSENTIAL THINKER.png
+STARTER CHALLENGER.webp
+CODE REUSER.webp
+GUARDIAN OF CODE.png
+ABSTRACT THINKER.webp
+POLYMORPH PIONEER.webp
+RAPID CODER.webp
+CODE APPRENTICE.webp
+OOP EXPLORER.png
+FOUNDATION BUILDER.png
+BEGINNER EXPLORER.webp
+
+{name: "Concept Challenger", obtained: false, difficulty: "moderate", url: "CONCEPT CHALLENGER.webp"},
+{name: "Resilient Learner", obtained: false, difficulty: "moderate", url: "RESILIENT LEARNER.webp"},
+{name: "Level-up Learner", obtained: false, difficulty: "moderate", url: "LEVEL-UP LEARNER.webp"},
+{name: "Bridge Builder", obtained: false, difficulty: "moderate", url: "BRIDGE BUILDER.webp"},
+{name: "Data Guardian", obtained: false, difficulty: "moderate", url: "DATA GUARDIAN.png"},
+{name: "Visionary Designer", obtained: false, difficulty: "moderate", url: "VISIONARY DESIGNER.webp"},
+{name: "Shape Shifter", obtained: false, difficulty: "moderate", url: "SHAPE SHIFTER.png"},
+{name: "OOP Challenger", obtained: false, difficulty: "moderate", url: "OOP CHALLENGER.webp"},
+{name: "Code Warrior", obtained: false, difficulty: "moderate", url: "CODE WARRIOR.webp"},
+{name: "Problem Solver", obtained: false, difficulty: "moderate", url: "PROBLEM SOLVER.webp"},
+
+CONCEPT CHALLENGER.webp
+RESILIENT LEARNER.webp
+LEVEL-UP LEARNER.webp
+BRIDGE BUILDER.webp
+DATA GUARDIAN.png
+VISIONARY DESIGNER.webp
+SHAPE SHIFTER.png
+OOP CHALLENGER.webp
+CODE WARRIOR.webp
+PROBLEM SOLVER.webp
+
+Concept Challenger
+Resilient Learner
+Level-up Learner
+Bridge Builder
+Data Guardian
+Visionary Designer
+Shape Shifter
+OOP Challenger
+Code Warrior
+Problem Solver
+
+{name: "Master Challenger", obtained: false, difficulty: "challenging", url: "MASTER CHALLENGER.webp"},
+{name: "Persistent Learner", obtained: false, difficulty: "challenging", url: "PERSISTENT LEARNER.webp"},
+{name: "On The Climb", obtained: false, difficulty: "challenging", url: "ON THE CLIMB.png"},
+{name: "Syntax Slayer", obtained: false, difficulty: "challenging", url: "SYNTAX SLAYER.webp"},
+{name: "Logic Breaker", obtained: false, difficulty: "challenging", url: "LOGIC BREAKER.webp"},
+{name: "Bug Hunter", obtained: false, difficulty: "challenging", url: "BUG HUNTER.webp"},
+{name: "Code Survivor", obtained: false, difficulty: "challenging", url: "CODE SURVIVOR.png"},
+{name: "Code Gladiator", obtained: false, difficulty: "challenging", url: "CODE GLADIATOR.webp"},
+{name: "Persistent Debugger", obtained: false, difficulty: "challenging", url: "PERSISTENT DEBUGGER.webp"},
+{name: "Idealist Coder", obtained: false, difficulty: "challenging", url: "IDEALIST.webp"},
+
+MASTER CHALLENGER.webp
+PERSISTENT LEARNER.webp
+ON THE CLIMB.png
+SYNTAX SLAYER.webp
+LOGIC BREAKER.webp
+BUG HUNTER.webp
+CODE SURVIVOR.png
+CODE GLADIATOR.webp
+PERSISTENT DEBUGGER.webp
+IDEALIST.webp
+
+Master Challenger
+Persistent Learner
+On The Climb
+Syntax Slayer
+Logic Breaker
+Bug Hunter
+Code Survivor
+Code Gladiator
+Persistent Debugger
+Idealist Coder
+
+{name: "OOP Master", obtained: false, difficulty: "tough", url: "OOP MASTER.webp"},
+{name: "Persistent Challenger", obtained: false, difficulty: "tough", url: "PERSISTENT CHALLENGER.png"},
+{name: "Code Fighter", obtained: false, difficulty: "tough", url: "CODE FIGHTER.webp"},
+{name: "Advancing", obtained: false, difficulty: "tough", url: "ADVANCING.webp"},
+{name: "Code Conqueror", obtained: false, difficulty: "tough", url: "CODE CONQUEROR.webp"},
+{name: "Guardian of Syntax", obtained: false, difficulty: "tough", url: "GUARDIAN OF SYNTAX.webp"},
+{name: "Logic Seeker", obtained: false, difficulty: "tough", url: "LOGIC SEEKER.png"},
+{name: "Summit Climber", obtained: false, difficulty: "tough", url: "SUMMIT CLIMBER.webp"},
+{name: "Grandmaster of Code", obtained: false, difficulty: "tough", url: "GRANDMASTER OF CODE.webp"},
+{name: "Iron Coder", obtained: false, difficulty: "tough", url: "IRON CODER.webp"},
+{name: "Unbreakable Spirit", obtained: false, difficulty: "tough", url: "UNBREAKABLE SPIRIT.webp"},
+
+OOP MASTER.webp
+PERSISTENT CHALLENGER.png
+CODE FIGHTER.webp
+ADVANCING.webp
+CODE CONQUEROR.webp
+GUARDIAN OF SYNTAX.webp
+LOGIC SEEKER.png
+SUMMIT CLIMBER.webp
+GRANDMASTER OF CODE.webp
+IRON CODER.webp
+UNBREAKABLE SPIRIT.webp
+
+OOP Master
+Persistent Challenger
+Code Fighter
+Advancing
+Code Conqueror
+Guardian of Syntax
+Logic Seeker
+Summit Climber
+Grandmaster of Code
+Iron Coder
+Unbreakable Spirit
+
+<div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="CONCEPT EXPLORER BADGE.webp" alt="">
+                    <p>Concept Explorer</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="JUNIOR INHERITOR.png" alt="">
+                    <p>Junior Inheritor</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="DATA PROTECTOR.webp" alt="">
+                    <p>Data Protector</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="ESSENTIAL THINKER.png" alt="">
+                    <p>Essential Thinker</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="STARTER CHALLENGER.webp" alt="">
+                    <p>Starter Challenger</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="CODE REUSER.webp" alt="">
+                    <p>Code Reuser</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="GUARDIAN OF CODE.png" alt="">
+                    <p>Guardian of Code</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="ABSTRACT THINKER.webp" alt="">
+                    <p>Abstract Thinker</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="POLYMORPH PIONEER.webp" alt="">
+                    <p>Polymorph Pinoeer</p>
+                </div>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="RAPID CODER.webp" alt="">
+                    <p>Rapid Coder</p>
+                </div>
+                <div class="col">
+                    <img style="height: 150px; width: 150px;" src="CODE APPRENTICE.webp" alt="">
+                    <p>Code Apprentice</p>
+                </div>
+                <div class="col">
+                    <img style="height: 150px; width: 150px;" src="OOP EXPLORER.png" alt="">
+                    <p>OOP Explorer</p>
+                </div>
+                <div class="col">
+                    <img style="height: 150px; width: 150px;" src="FOUNDATION BUILDER.png" alt="">
+                    <p>Foundation Builder</p>
+                </div>
+                <div class="col">
+                    <img style="height: 150px; width: 150px;" src="BEGINNER EXPLORER.webp" alt="">
+                    <p>Beginner Explorer</p>
+                </div>
+
+
 async function getData(){
                             const fetchedData = await datas
                             const getData = await fetchedData.json()
@@ -307,6 +512,179 @@ async function getData(){
                         }
 
                             
+
+easy pre-test
+Concept Explorer
+Starter Challenger
+
+Starter Challenger
+
+
+moderate pre-test
+Concept Explorer
+Resilient Learner
+Starter Challenger
+
+Resilient Learner
+
+Level-up Learner
+
+
+challenging pre-test
+Master Challenger
+Persistent Learner
+On the Climb
+
+Persistent Learner
+
+On the Climb
+
+
+tough pre-test
+OOP Master
+Persistent Challenger
+Code Fighter
+Advancing
+
+Code Fighter
+Persistent Challenger
+
+Advancing
+
+
+easy post-test
+Code Apprentice
+OOP Explorer
+Foundation Builder
+Beginner Explorer
+
+OOP Explorer
+
+Foundation Builder
+
+Beginner Explorer
+
+
+moderate post-test
+OOP Challenger
+Code Warrior
+Problem Solver
+
+OOP Challenger
+Problem Solver
+
+Problem Solver
+
+
+challenging post-test
+Code Gladiator
+Persistent Debugger
+Ideal Coder
+
+Code Gladiator
+Persistent Debugger
+
+Ideal Coder
+
+
+tough post-test
+Grandmaster of Code
+Iron Coder
+Unbreakable Spirit
+
+Iron Coder
+Unbreakable Spirit
+
+Unbreakable Spirit
+
+
+course 9
+easy badges
+Junior Inheritor
+Junior Inheritor
+Code Reuser
+
+moderate badges
+Bridge Builder
+Bridge Builder
+Code Reuser
+
+challenging badges
+Syntax Slayer
+Syntax Slayer
+Code Reuser
+
+tough badges
+Code Conqueror
+Code Conqueror
+Code Reuser
+
+
+course 15
+easy badges
+Data Protector
+Data Protector
+Guardian of Code
+
+moderate badges
+Data Guardian
+Data Guardian
+Guardian of Code
+
+challenging badges
+Logic Breaker
+Logic Breaker
+Guardian of Code
+
+tough badges
+Guardian of Syntax
+Guardian of Syntax
+Guardian of Code
+
+
+course 21
+easy badges
+Essential Thinker
+Essential Thinker
+Abstract Thinker
+
+moderate badges
+Visionary Designer
+Visionary Designer
+Abstract Thinker
+
+challenging badges
+Bug Hunter
+Bug Hunter
+Abstract Thinker
+
+tough badges
+Logic Seeker
+Logic Seeker
+Abstract Thinker
+
+
+
+course 27
+easy badges
+Rapid Coder
+Rapid Coder
+Polymorph Pioneer
+
+moderate badges
+Shape Shifter
+Shape Shifter
+Polymorph Pioneer
+
+challenging badges
+Code Survivor
+Code Survivor
+Polymorph Pioneer
+
+tough badges
+Summit Climber
+Summit Climber
+Polymorph Pioneer
 
 
 

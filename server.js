@@ -313,6 +313,47 @@ app.post('/moduleProgress/update/polymorphism', async(req, res)=>{
     res.json(data)
 })
 
+//ALL BADGES
+const schema5 = new mongoose.Schema({
+    obtained: Boolean,
+    name: String,
+    difficulty: String,
+    url: String
+})
+
+const AllBadges = mongoose.model('AllBadges', schema5)
+
+app.get('/badges/easy', async(req, res) => {
+    const data = await AllBadges.find({difficulty: "easy", obtained: true})
+
+    res.json(data)
+})
+
+app.get('/badges/moderate', async(req, res) => {
+    const data = await AllBadges.find({difficulty: "moderate", obtained: true})
+
+    res.json(data)
+})
+
+app.get('/badges/challenging', async(req, res) => {
+    const data = await AllBadges.find({difficulty: "challenging", obtained: true})
+
+    res.json(data)
+})
+
+app.get('/badges/tough', async(req, res) => {
+    const data = await AllBadges.find({difficulty: "tough", obtained: true})
+
+    res.json(data)
+})
+
+app.post('/badges/update', async(req, res)=>{
+    const {name} = req.body
+
+    const data = await AllBadges.updateOne({name: name}, {$set:{obtained: true}})
+    res.json(data)
+})
+
 app.listen(5000, () => {
     
 })

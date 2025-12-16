@@ -12,258 +12,179 @@
 
 <body id="App">
 
-    <div class="container" v-if="Exercises">
-        <div class="row hstack justify-content-center">
-            <div class="col-10">
-                <div class="container hstack gap-3 align-items-center m-4">
-                    <h4 class="ms-4 fw-normal">Easy Mode</h4>
-                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
+    <!--EASY BADGES-->
+    <div class="container-fluid" v-if="allBadges">
+        <div class="container-fluid vstack align-items-center justify-content-center text-center p-2">
+            <div class="container">
+                <h1>Easy Level Badges</h1>
+                <p>Complete all badges!</p>
+            </div>
+            <hr style="width: 100%;">
+            <div class="row hstack" style="max-width: 100%;" id="easyBadges">
+                <div class="container align-items-center justify-content-center text-center p-5">
+                    No Badges Obtained in Easy Level.
                 </div>
             </div>
-            <div class="col">
-                <h5>SCORES:</h5>
+            <hr style="width: 100%;">
+        </div>
+
+        <!--MODERATE BADGES-->
+        <div class="container-fluid vstack align-items-center justify-content-center text-center p-2">
+            <div class="container">
+                <h1>Moderate Level Badges</h1>
+                <p>Complete all badges!</p>
             </div>
-            <div class="row" @click="showEasyPreTestStart">
-                <div class="col-10">
-                    <p>1. Pre-Test</p>
+            <hr style="width: 100%;">
+            <div class="row hstack" style="max-width: 100%;">
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="CONCEPT CHALLENGER.webp" alt="">
+                    <p>Concept Challenger</p>
                 </div>
-                <div class="col">
-                    <p>5/5</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="RESILIENT LEARNER.webp" alt="">
+                    <p>Resilient Learner</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseInheritanceEasyActivity">
-                <div class="col-10">
-                    <p>2. Inheritance Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="LEVEL-UP LEARNER.webp" alt="">
+                    <p>Level-up Learner</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="BRIDGE BUILDER.webp" alt="">
+                    <p>Bridge Builder</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseEncapsulationEasyActivity">
-                <div class="col-10">
-                    <p>3. Encapsulation Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="DATA GUARDIAN.png" alt="">
+                    <p>Data Guardian</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="VISIONARY DESIGNER.webp" alt="">
+                    <p>Visionary Designer</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseAbstractionEasyActivity">
-                <div class="col-10">
-                    <p>4. Abstraction Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="SHAPE SHIFTER.png" alt="">
+                    <p>Shape Shifter</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="OOP CHALLENGER.webp" alt="">
+                    <p>OOP Challenger</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCoursePolymorphismEasyActivity">
-                <div class="col-10">
-                    <p>5. Polymorphism Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="CODE WARRIOR.webp" alt="">
+                    <p>Code Warrior</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
-                </div>
-            </div>
-            <div class="row" @click="showEasyPostTestStart">
-                <div class="col-10">
-                    <p>6. Post-Test</p>
-                </div>
-                <div class="col">
-                    <p>8/8</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="PROBLEM SOLVER.webp" alt="">
+                    <p>Problem Solver</p>
                 </div>
             </div>
         </div>
 
-        <div class="row hstack justify-content-center">
-            <div class="col-10">
-                <div class="container hstack gap-3 align-items-center m-4">
-                    <h4 class="ms-4 fw-normal">Moderate Mode</h4>
-                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-                </div>
+        <!--CHALLENGING BADGES-->
+        <div class="container-fluid vstack align-items-center justify-content-center text-center p-2">
+            <div class="container">
+                <h1>Challenging Level Badges</h1>
+                <p>Complete all badges!</p>
             </div>
-            <div class="col">
-                <h5>SCORES:</h5>
-            </div>
-            <div class="row" @click="showmoderatePreTestStart">
-                <div class="col-10">
-                    <p>1. Pre-Test</p>
+            <hr style="width: 100%;">
+            <div class="row hstack" style="max-width: 100%;">
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="MASTER CHALLENGER.webp" alt="">
+                    <p>Master Challenger</p>
                 </div>
-                <div class="col">
-                    <p>5/5</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="PERSISTENT LEARNER.webp" alt="">
+                    <p>Persistent Learner</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseInheritancemoderateActivity">
-                <div class="col-10">
-                    <p>2. Inheritance Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="ON THE CLIMB.png" alt="">
+                    <p>On The Climb</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="SYNTAX SLAYER.webp" alt="">
+                    <p>Syntax Slayer</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseEncapsulationmoderateActivity">
-                <div class="col-10">
-                    <p>3. Encapsulation Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="LOGIC BREAKER.webp" alt="">
+                    <p>Logic Breaker</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="BUG HUNTER.webp" alt="">
+                    <p>Bug Hunter</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseAbstractionmoderateActivity">
-                <div class="col-10">
-                    <p>4. Abstraction Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="CODE SURVIVOR.png" alt="">
+                    <p>Code Survivor</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="CODE GLADIATOR.webp" alt="">
+                    <p>Code Gladiator</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCoursePolymorphismmoderateActivity">
-                <div class="col-10">
-                    <p>5. Polymorphism Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="PERSISTENT DEBUGGER.webp" alt="">
+                    <p>Persistent Debugger</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
-                </div>
-            </div>
-            <div class="row" @click="showmoderatePostTestStart">
-                <div class="col-10">
-                    <p>6. Post-Test</p>
-                </div>
-                <div class="col">
-                    <p>8/8</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="IDEALIST.webp" alt="">
+                    <p>Idealist Coder</p>
                 </div>
             </div>
         </div>
 
-        <div class="row hstack justify-content-center">
-            <div class="col-10">
-                <div class="container hstack gap-3 align-items-center m-4">
-                    <h4 class="ms-4 fw-normal">Challenging Mode</h4>
-                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-warning rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-dark rounded-circle" style="height: 20px; width: 20px;"></div>
-                </div>
+        <!--TOUGH BADGES-->
+        <div class="container-fluid vstack align-items-center justify-content-center text-center p-2">
+            <div class="container">
+                <h1>Tough Level Badges</h1>
+                <p>Complete all badges!</p>
             </div>
-            <div class="col">
-                <h5>SCORES:</h5>
-            </div>
-            <div class="row" @click="showchallengingPreTestStart">
-                <div class="col-10">
-                    <p>1. Pre-Test</p>
+            <hr style="width: 100%;">
+            <div class="row hstack" style="max-width: 100%;">
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="OOP MASTER.webp" alt="">
+                    <p>OOP Master</p>
                 </div>
-                <div class="col">
-                    <p>5/5</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="PERSISTENT CHALLENGER.png" alt="">
+                    <p>Persistent Challenger</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseInheritancechallengingActivity">
-                <div class="col-10">
-                    <p>2. Inheritance Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="CODE FIGHTER.webp" alt="">
+                    <p>Code Fighter</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="ADVANCING.webp" alt="">
+                    <p>Advancing</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseEncapsulationchallengingActivity">
-                <div class="col-10">
-                    <p>3. Encapsulation Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="CODE CONQUEROR.webp" alt="">
+                    <p>Code Conqueror</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="GUARDIAN OF SYNTAX.webp" alt="">
+                    <p>Guardian of Syntax</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCourseAbstractionchallengingActivity">
-                <div class="col-10">
-                    <p>4. Abstraction Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="LOGIC SEEKER.png" alt="">
+                    <p>Logic Seeker</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="SUMMIT CLIMBER.webp" alt="">
+                    <p>Summit Climber</p>
                 </div>
-            </div>
-            <div class="row" @click="btnModuleCoursePolymorphismchallengingActivity">
-                <div class="col-10">
-                    <p>5. Polymorphism Activity</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="GRANDMASTER OF CODE.webp" alt="">
+                    <p>Grandmaster of Code</p>
                 </div>
-                <div class="col">
-                    <p>2/2</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="IRON CODER.webp" alt="">
+                    <p>Iron Coder</p>
                 </div>
-            </div>
-            <div class="row" @click="showchallengingPostTestStart">
-                <div class="col-10">
-                    <p>6. Post-Test</p>
-                </div>
-                <div class="col">
-                    <p>8/8</p>
+                <div class="col p-2">
+                    <img style="height: 150px; width: 150px;" src="UNBREAKABLE SPIRIT.webp" alt="">
+                    <p>Unbreakable Spirit</p>
                 </div>
             </div>
         </div>
 
-        <div class="row hstack justify-content-center">
-            <div class="col-10">
-                <div class="container hstack gap-3 align-items-center m-4">
-                    <h4 class="ms-4 fw-normal">Tough Mode</h4>
-                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-success rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-warning rounded-circle" style="height: 20px; width: 20px;"></div>
-                    <div class="box bg-danger rounded-circle" style="height: 20px; width: 20px;"></div>
-                </div>
-            </div>
-            <div class="col">
-                <h5>SCORES:</h5>
-            </div>
-            <div class="row" @click="showtoughPreTestStart">
-                <div class="col-10">
-                    <p>1. Pre-Test</p>
-                </div>
-                <div class="col">
-                    <p>5/5</p>
-                </div>
-            </div>
-            <div class="row" @click="btnModuleCourseInheritancetoughActivity">
-                <div class="col-10">
-                    <p>2. Inheritance Activity</p>
-                </div>
-                <div class="col">
-                    <p>2/2</p>
-                </div>
-            </div>
-            <div class="row" @click="btnModuleCourseEncapsulationtoughActivity">
-                <div class="col-10">
-                    <p>3. Encapsulation Activity</p>
-                </div>
-                <div class="col">
-                    <p>2/2</p>
-                </div>
-            </div>
-            <div class="row" @click="btnModuleCourseAbstractiontoughActivity">
-                <div class="col-10">
-                    <p>4. Abstraction Activity</p>
-                </div>
-                <div class="col">
-                    <p>2/2</p>
-                </div>
-            </div>
-            <div class="row" @click="btnModuleCoursePolymorphismtoughActivity">
-                <div class="col-10">
-                    <p>5. Polymorphism Activity</p>
-                </div>
-                <div class="col">
-                    <p>2/2</p>
-                </div>
-            </div>
-            <div class="row" @click="showtoughPostTestStart">
-                <div class="col-10">
-                    <p>6. Post-Test</p>
-                </div>
-                <div class="col">
-                    <p>8/8</p>
-                </div>
-            </div>
-        </div>
     </div>
 
 </body>
