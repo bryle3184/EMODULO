@@ -56,7 +56,20 @@
         <div class="container-fluid bg-dark d-flex text-center align-items-center justify-content-center text-light"
             style="height: 200px;">
             <div class="container">
-                <h1>Welcome, Bryle Ebuenga!</h1>
+                <h1 id="welcomename">Welcome, Bryle Ebuenga!</h1>
+                <script>
+                    const welcomename = document.getElementById('welcomename')
+                    const fetchname = fetch('/name')
+
+                    async function getname(){
+                        const res = await fetchname
+                        const data = await res.json()
+
+                        welcomename.textContent = `Welcome, ${data.name}!`
+                    }
+
+                    getname()
+                </script>
                 <h5>Success is not final; failure is not fatal; It is the courage to continue that counts.</h5>
                 <button @click="showDifficultySection" class="btn btn-primary rounded-pill mt-3 ps-4 pe-4"
                     style="font-weight: bold;">Start Module</button>
