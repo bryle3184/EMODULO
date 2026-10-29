@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended:false}))
 
 dotenv.config()
 
-const mongurl = process.env.MONGO_URL
+const mongurl = process.env.MONGODB_URI
 
 mongoose.connect(mongurl).then(()=>{})
 
